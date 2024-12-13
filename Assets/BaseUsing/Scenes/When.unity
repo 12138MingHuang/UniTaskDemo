@@ -1976,13 +1976,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   FirstRunner:
     Target: {fileID: 2048845705}
-    Speed: 0
-    StartPos: {x: 0, y: 0, z: 0}
+    Speed: 5
+    StartPos: {x: -7, y: 3, z: 0}
     ReachGoal: 0
   SecondRunner:
     Target: {fileID: 1023426536}
-    Speed: 0
-    StartPos: {x: 0, y: 0, z: 0}
+    Speed: 8
+    StartPos: {x: -7, y: 2, z: 0}
     ReachGoal: 0
   FirstRunButton: {fileID: 397364157}
   SecondRunButton: {fileID: 1787930114}

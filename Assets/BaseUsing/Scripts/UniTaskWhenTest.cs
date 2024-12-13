@@ -66,11 +66,18 @@ public class UniTaskWhenTest : MonoBehaviour
 
     private async void OnClickWhenAll()
     {
-        
+        var firstRunnerReach = UniTask.WaitUntil(() => FirstRunner.ReachGoal);
+        var secondRunnerReach = UniTask.WaitUntil(() => SecondRunner.ReachGoal);
+        await UniTask.WhenAll(firstRunnerReach, secondRunnerReach);
+        CompleteText.text = "双方都抵达了终点，比赛结束";
     }
 
     private async void OnClickWhenAny()
     {
-        
+        var firstRunnerReach = UniTask.WaitUntil(() => FirstRunner.ReachGoal);
+        var secondRunnerReach = UniTask.WaitUntil(() => SecondRunner.ReachGoal);
+        await UniTask.WhenAny(firstRunnerReach, secondRunnerReach);
+        string winner = FirstRunner.ReachGoal ? "蓝色小球" : "黄色小球";
+        WinnerText.text = $"{winner} 率先抵达了终点，获得了胜利";
     }
 }
